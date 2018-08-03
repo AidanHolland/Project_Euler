@@ -10,33 +10,29 @@ By considering the terms in the Fibonacci sequence whose values do not exceed fo
 */
 public class Question2 
 {
-    
-
     int cap = 4000000;
     //Count up to 4 million
     
+    //Get second number, add first number to it, first number becomes second number
     
     int addFib()
     { 
-        int sum = 2;
-        int prev = 1;
-        int temp = 0;
-        int evenFib = 1;
-        for(int i = 0; i < cap; i++)
+        int b = 2;
+        int a = 1;
+        int c = 0;
+        int evenFib = 0;
+        
+        while(b < cap)
         {  
-            temp = prev;
-            sum += prev;
-            prev = temp;
-            
-            
-            if(temp % 2 == 0)
+            if(b % 2 == 0)
             {
-                evenFib += temp;
-            }
-            temp =+ sum;
-                   
+                evenFib += b;
+            }     
+            c = b;
+            b += a;
+            a = c;
         }
-        return sum;
+        return evenFib;
     }
     
     
